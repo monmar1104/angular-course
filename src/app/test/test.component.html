@@ -1,0 +1,44 @@
+<div *ngIf="isVisible">
+  <table>
+    <thead>
+      <td>Imie</td>
+      <td>Nazwisko</td>
+      <td>Wiek</td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{employee.name}}</td>
+        <td>{{employee.surename}}</td>
+        <td>{{employee.age}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<button (click) = "show()">Show</button>
+<button (click) = "hide()">Hide</button>
+
+<div>
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>#</th>
+        <th>Imie</th>
+        <th>Nazwisko</th>
+        <th>Wiek</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let employee of employeesArray; let i = even">
+        <ng-container *ngIf="employee.age > 16">
+          <tr>
+            <td>{{i}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.surename}}</td>
+            <td>{{employee.age}}</td>
+          </tr>
+        </ng-container>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

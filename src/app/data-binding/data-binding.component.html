@@ -1,0 +1,34 @@
+<div [class]="mainClass">
+  <h3 [class]="titleColor">Data binding - Angular Course</h3>
+
+  <div>
+    {{name}} works as a {{professions}}. {{name}}'s greatest skill is {{skills}}.
+    <br>
+
+    <input [(ngModel)]="name"><br>
+    <input [(ngModel)]="professions"><br>
+    <input [(ngModel)]="skills"><br>
+
+  </div>
+
+  <br>
+  <br>
+<hr>
+
+  <div>
+    <input [value]="inputText" [type]="type">
+  </div>
+
+  <div>
+    <input [(ngModel)]="inputText2Way" [placeholder]="i2placeholder" [maxLength]="i2length">
+    {{inputText2Way}}
+  </div>
+
+  <div>
+    <input (click)="click($event)">
+    <button [disabled]="button" (click)="change()">Add</button>
+    {{showClick}}
+  </div>
+
+  <img [src]="srcUrl" alt="angular-ico" (mousemove)="onMouseMove()">
+</div>
